@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofá Max - Higienização Profissional de Estofados</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #F5F0E6;
+            --beige-light: #faf8f3;
+            --beige-medium: #e8e2d1;
+            --beige-dark: #d6cfb9;
+            --orange: #D87D4A;
+            --orange-light: #ff9e6d;
+            --orange-dark: #c76e41;
+            --white: #FFFFFF;
+            --black: #000000;
+            --gray: #333333;
+            --light-gray: #777777;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --gradient: linear-gradient(135deg, var(--orange), var(--orange-light));
+            --gradient-dark: linear-gradient(135deg, var(--orange-dark), var(--orange));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--beige-light);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 34px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--gradient);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--orange);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(216, 125, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(216, 125, 74, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--black);
+            border: 2px solid var(--orange);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--beige-medium);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .text-highlight {
+            color: var(--orange);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-top: 25px;
+        }
+
+        /* Header ajustado */
+        .header {
+            background-color: var(--beige-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid var(--beige-medium);
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Logo maior com mais destaque */
+        .logo img {
+            height: 180px;
+            transition: var(--transition);
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav ul {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav a {
+            font-weight: 500;
+            color: var(--gray);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav a:hover {
+            color: var(--orange);
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: var(--transition);
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--gray);
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 60px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--beige-light) 0%, var(--beige) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -150px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(216,125,74,0.1) 0%, rgba(216,125,74,0) 70%);
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            color: var(--gray);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            color: var(--black);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 10px solid var(--white);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: var(--transition);
+        }
+
+        .hero-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+            /* Imagem de alta qualidade */
+            background-image: url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .image-badge {
+            position: absolute;
+            bottom: 20px;
+            left: -15px;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Services */
+        .services {
+            padding: 80px 0;
+            background-color: var(--beige);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23e8e2d1' fill-opacity='1' d='M0,160L48,144C96,128,192,96,288,96C384,96,480,128,576,128C672,128,768,96,864,80C960,64,1056,64,1152,85.3C1248,107,1344,149,1392,170.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat center bottom;
+            background-size: cover;
+            z-index: 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: var(--transition);
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(216, 125, 74, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            transition: var(--transition);
+            transform: translateY(-100%);
+        }
+
+        .service-card:hover::before {
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background-color: rgba(216, 125, 74, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--gradient);
+            transform: scale(1.1);
+        }
+
+        .service-icon i {
+            font-size: 40px;
+            color: var(--orange);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon i {
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+
+        .benefits-banner {
+            background: var(--gradient-dark);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .benefits-banner::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .benefits-banner h3 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 30px 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .benefit-card i {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover i {
+            transform: scale(1.2);
+        }
+
+        .benefit-card h4 {
+            font-size: 1.4rem;
+            margin: 15px 0 10px;
+        }
+
+        /* How it works */
+        .how-it-works {
+            padding: 100px 0 80px;
+            background-color: var(--beige-medium);
+            position: relative;
+        }
+
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f5f0e6' fill-opacity='1' d='M0,64L48,90.7C96,117,192,171,288,165.3C384,160,480,96,576,74.7C672,53,768,75,864,101.3C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat center top;
+            background-size: cover;
+            z-index: 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 40px 25px;
+            background-color: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            transition: var(--transition);
+            transform: translateY(100%);
+        }
+
+        .step-card:hover::after {
+            transform: translateY(0);
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 25px;
+            box-shadow: 0 5px 15px rgba(216, 125, 74, 0.3);
+        }
+
+        .step-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+
+        .text-center {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Before After */
+        .before-after {
+            padding: 100px 0;
+            background-color: var(--beige);
+            position: relative;
+        }
+
+        .before-after::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23e8e2d1' fill-opacity='1' d='M0,224L48,197.3C96,171,192,117,288,117.3C384,117,480,171,576,170.7C672,171,768,117,864,96C960,75,1056,85,1152,90.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat center top;
+            background-size: cover;
+            z-index: 0;
+        }
+
+        .ba-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .ba-content {
+            padding: 20px;
+        }
+
+        .ba-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            color: var(--black);
+        }
+
+        .ba-content p {
+            margin-bottom: 35px;
+            font-size: 1.15rem;
+            color: var(--gray);
+        }
+
+        .ba-images {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 500px;
+            border: 10px solid var(--white);
+        }
+
+        .ba-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            /* Imagem de alta qualidade */
+            background-image: url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ba-images:hover img {
+            transform: scale(1.05);
+        }
+
+        .ba-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .ba-overlay h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .ba-overlay p {
+            font-size: 1.2rem;
+            max-width: 400px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--beige-medium);
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f5f0e6' fill-opacity='1' d='M0,128L48,122.7C96,117,192,107,288,128C384,149,480,203,576,197.3C672,192,768,128,864,112C960,96,1056,128,1152,149.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat center top;
+            background-size: cover;
+            z-index: 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 120px;
+            color: rgba(216, 125, 74, 0.1);
+            font-family: serif;
+            line-height: 1;
+            z-index: 0;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-rating {
+            color: var(--orange);
+            margin-bottom: 20px;
+            font-size: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-rating .far {
+            color: #ddd;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 30px;
+            position: relative;
+            padding: 20px;
+            background-color: rgba(216, 125, 74, 0.05);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .author-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--black);
+        }
+
+        .author-info p {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        .counter-badge {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--white);
+            padding: 20px 40px;
+            border-radius: 50px;
+            margin-top: 50px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .counter-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .counter-badge span {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--orange);
+        }
+
+        .counter-badge p {
+            font-weight: 600;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-card {
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .stat-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        /* Chatbot */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chatbot-button {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        .chatbot-window {
+            width: 380px;
+            height: 500px;
+            background-color: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            position: absolute;
+            bottom: 85px;
+            right: 0;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .chatbot-header {
+            background: var(--gradient-dark);
+            color: var(--white);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chatbot-header h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+        }
+
+        .chatbot-header i {
+            color: var(--white);
+        }
+
+        .close-chatbot {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 20px;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .close-chatbot:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 12px 18px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.4;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bot-message {
+            background-color: #ffffff;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+        }
+
+        .user-message {
+            background: var(--gradient);
+            color: var(--white);
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+            box-shadow: 0 2px 5px rgba(216, 125, 74, 0.2);
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .chatbot-input input:focus {
+            border-color: var(--orange);
+            box-shadow: 0 0 0 2px rgba(216, 125, 74, 0.2);
+        }
+
+        .chatbot-input button {
+            background: var(--gradient);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: 0 3px 10px rgba(216, 125, 74, 0.3);
+        }
+
+        .chatbot-input button:hover {
+            transform: scale(1.05);
+        }
+
+        .option-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .option-btn {
+            background: var(--gradient);
+            color: var(--white);
+            border: none;
+            border-radius: 20px;
+            padding: 10px 18px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(216, 125, 74, 0.2);
+        }
+
+        .option-btn:hover {
+            background: var(--gradient-dark);
+            transform: translateY(-2px);
+        }
+
+        .calendar-container {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 15px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 15px;
+            background-color: var(--white);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 0 5px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .calendar-day {
+            padding: 10px 5px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .calendar-day.available {
+            background-color: rgba(216, 125, 74, 0.1);
+        }
+
+        .calendar-day.available:hover {
+            background-color: var(--orange);
+            color: white;
+        }
+
+        .calendar-day.unavailable {
+            background-color: #f0f0f0;
+            color: #aaa;
+            cursor: not-allowed;
+        }
+
+        .calendar-day.selected {
+            background-color: var(--orange);
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--beige-light);
+            color: var(--black);
+            padding: 100px 0 30px;
+            position: relative;
+            border-top: 1px solid var(--beige-medium);
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f5f0e6' fill-opacity='1' d='M0,224L48,213.3C96,203,192,181,288,160C384,139,480,117,576,128C672,139,768,181,864,197.3C960,213,1056,203,1152,176C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat center top;
+            background-size: cover;
+            z-index: 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-about .logo {
+            margin-bottom: 25px;
+        }
+
+        .footer-about p {
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            color: var(--gray);
+        }
+
+        .social-links a:hover {
+            background: var(--gradient);
+            transform: translateY(-5px);
+            color: var(--white);
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--black);
+        }
+
+        .footer-links h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient);
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange);
+            transform: translateX(5px);
+        }
+
+        .footer-contact ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        .footer-contact i {
+            color: var(--orange);
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--beige-medium);
+            padding-top: 25px;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .section-header h2 {
+                font-size: 2.4rem;
+            }
+
+            .ba-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--beige-light);
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                padding: 25px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path 0.4s ease;
+            }
+            
+            .nav.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            
+            .nav ul {
+                flex-direction: column;
+                gap: 20px;
+                padding: 0 30px;
+            }
+            
+            .nav a {
+                display: block;
+                padding: 12px 0;
+                font-size: 1.1rem;
+            }
+            
+            .header-cta {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .chatbot-window {
+                width: 320px;
+                height: 450px;
+            }
+            
+            .logo img {
+                height: 65px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .chatbot-window {
+                width: 300px;
+                right: -15px;
+            }
+
+            .counter-badge {
+                padding: 15px 30px;
+            }
+            
+            .logo img {
+                height: 60px;
+            }
+            
+            .footer {
+                padding: 80px 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <img src="https://i.ibb.co/rKfb6zK3/logo-sofamax-nova.png" alt="Sofá Max Logo">
+                </div>
+                
+                <button class="mobile-menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                        <li><a href="#antes-depois">Resultados</a></li>
+                        <li><a href="#depoimentos">Depoimentos</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-cta">
+                    <a href="#" class="btn btn-primary" id="agendeAgoraBtn">Agende agora</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <h1>Higienização Profissional de <span class="text-highlight">Estofados</span> em Recife</h1>
+                    <p>Devolvemos a aparência de novo para seu sofá, poltronas e estofados com nossa técnica exclusiva e produtos ecológicos.</p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/5581983930781" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i> Fale pelo WhatsApp
+                        </a>
+                        <a href="#servicos" class="btn btn-secondary">Conheça nossos serviços</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://ibb.co/38r2jzX" alt="">
+                    <div class="image-badge">Atendemos toda região de Recife</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos <span class="text-highlight">Serviços</span></h2>
+                <p>Serviços especializados para todos os tipos de estofados com produtos ecológicos e tecnologia avançada</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Limpeza de Sofás</h3>
+                    <p>Remoção profunda de manchas, ácaros e odores para todos os tipos de tecido</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <h3>Higienização de Cadeiras</h3>
+                    <p>Limpeza completa para cadeiras de escritório e jantar</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Limpeza de Colchões</h3>
+                    <p>Eliminação de ácaros, bactérias e manchas para um sono saudável</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3>Poltronas e Puffs</h3>
+                    <p>Restauração completa para móveis menores</p>
+                </div>
+            </div>
+            
+            <div class="benefits-banner">
+                <h3>Vantagens Sofá Max</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Rápido</h4>
+                        <p>Secagem em 2-4 horas</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Ecológico</h4>
+                        <p>Produtos biodegradáveis</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Garantia</h4>
+                        <p>Satisfação garantida</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-title">Estofados Revitalizados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-title">Satisfação dos Clientes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24h</div>
+                    <div class="stat-title">Agendamento Rápido</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-title">Produtos Ecológicos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Como <span class="text-highlight">Funciona</span></h2>
+                <p>Um processo simples e eficiente para renovar seus estofados sem complicação</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Agendamento</h3>
+                    <p>Entre em contato para agendar o melhor dia e horário</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Higienização</h3>
+                    <p>Nossa equipe realiza a limpeza profunda no local</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Secagem Rápida</h3>
+                    <p>Seu estofado seca completamente em poucas horas</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Aproveite</h3>
+                    <p>Desfrute do seu móvel como novo por muito mais tempo</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="https://wa.me/5581983930781" class="btn btn-primary">Agendar minha higienização</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="antes-depois" class="before-after">
+        <div class="container">
+            <div class="ba-container">
+                <div class="ba-content">
+                    <h2>Transformamos seus <span class="text-highlight">Estofados</span></h2>
+                    <p>Veja como nossos serviços podem revitalizar completamente seus móveis, removendo manchas difíceis, odores e renovando a aparência.</p>
+                    <p>Com a Sofá Max, seu sofá ficará com aspecto de novo, prolongando sua vida útil e garantindo um ambiente mais saudável para sua família.</p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/5581983930781" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i> Solicite um orçamento
+                        </a>
+                    </div>
+                </div>
+                <div class="ba-images">
+                    <img src="https://i.ibb.co/84Rf5dw2/antes-depois.jpg" alt="Antes e depois da higienização">
+                    <div class="ba-overlay">
+                        <h3>Antes e Depois</h3>
+                        <p>Resultado real de um sofá higienizado pela Sofá Max</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que nossos <span class="text-highlight">clientes</span> dizem</h2>
+                <p>Mais de 500 estofados revitalizados em Recife e região</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Meu sofá estava com manchas de café e sujeira de cachorro. A Sofá Max fez um trabalho incrível! Parece que comprei um sofá novo. O atendimento foi excelente e o preço justo."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AC</div>
+                        <div class="author-info">
+                            <h4>Ana Carolina</h4>
+                            <p>Recife, PE</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Serviço rápido e eficiente. A equipe chegou no horário, foi super profissional e meu sofá ficou impecável. Recomendo para todos que querem renovar seus estofados sem gastar uma fortuna."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RS</div>
+                        <div class="author-info">
+                            <h4>Roberto Silva</h4>
+                            <p>Olinda, PE</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"Fiquei impressionada com o resultado. As manchas de vinho sumiram completamente e o cheiro do sofá ficou ótimo. Valeu cada centavo! Com certeza contratarei novamente."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h4>Juliana Mendes</h4>
+                            <p>Jaboatão, PE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="counter-badge">
+                <span>500+</span>
+                <p>estofados revitalizados</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="chatbot-container">
+        <div class="chatbot-button" id="chatbotButton">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3><i class="fas fa-robot"></i> Assistente Sofá Max</h3>
+                <button class="close-chatbot" id="closeChatbot">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    Olá! Sou o assistente virtual da Sofá Max. Como posso ajudar você hoje?
+                    <div class="option-buttons">
+                        <button class="option-btn" data-option="agendar">Agendar visita</button>
+                        <button class="option-btn" data-option="orcamento">Solicitar orçamento</button>
+                        <button class="option-btn" data-option="duvidas">Tirar dúvidas</button>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Digite sua mensagem...">
+                <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo">
+                        <img src="https://i.ibb.co/rKfb6zK3/logo-sofamax-nova.png" alt="Sofá Max Logo">
+                    </div>
+                    <p>Higienização profissional de estofados em Recife e região metropolitana.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/sofamax.higienizacao"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5581983930781"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="#servicos">Limpeza de Sofás</a></li>
+                        <li><a href="#servicos">Higienização de Cadeiras</a></li>
+                        <li><a href="#servicos">Limpeza de Colchões</a></li>
+                        <li><a href="#servicos">Poltronas e Puffs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#como-funciona">Como Funciona</a></li>
+                        <li><a href="#antes-depois">Resultados</a></li>
+                        <li><a href="#depoimentos">Depoimentos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fab fa-whatsapp"></i> (81) 98393-0781</li>
+                        <li><i class="fas fa-envelope"></i> sofamax25@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Recife e região metropolitana</li>
+                        <li><i class="fas fa-clock"></i> Seg-Sex: 8h-18h | Sáb: 8h-12h</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>CNPJ: 61.568.873/0001-90 | Sofá Max Higienização de Estofados © <span id="current-year"></span> - Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu mobile
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('.nav');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-bars');
+                this.querySelector('i').classList.toggle('fa-times');
+            });
+            
+            // Fechar menu ao clicar em um link
+            const navLinks = document.querySelectorAll('.nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                    mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                });
+            });
+            
+            // Botão "Agende Agora" no header
+            const agendeAgoraBtn = document.getElementById('agendeAgoraBtn');
+            
+            // Chatbot
+            const chatbotButton = document.getElementById('chatbotButton');
+            const chatbotWindow = document.getElementById('chatbotWindow');
+            const closeChatbot = document.getElementById('closeChatbot');
+            const chatbotMessages = document.getElementById('chatbotMessages');
+            const userInput = document.getElementById('userInput');
+            const sendMessage = document.getElementById('sendMessage');
+            
+            let chatStep = 0;
+            let appointmentData = {
+                service: '',
+                date: '',
+                time: '',
+                name: '',
+                phone: '',
+                address: ''
+            };
+            
+            // Datas indisponíveis (simulação de agenda)
+            const unavailableDates = [
+                '2023-08-15', '2023-08-16', '2023-08-20',
+                '2023-08-25', '2023-08-26', '2023-08-27'
+            ];
+            
+            // Abrir/fechar chatbot
+            chatbotButton.addEventListener('click', () => {
+                chatbotWindow.style.display = 'flex';
+                // Rolar para o final
+                setTimeout(() => {
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                }, 100);
+            });
+            
+            closeChatbot.addEventListener('click', () => {
+                chatbotWindow.style.display = 'none';
+            });
+            
+            // Botão "Agende Agora" abre o chatbot
+            agendeAgoraBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                chatbotWindow.style.display = 'flex';
+                // Iniciar o fluxo de agendamento
+                chatStep = 0;
+                appointmentData = {
+                    service: '',
+                    date: '',
+                    time: '',
+                    name: '',
+                    phone: '',
+                    address: ''
+                };
+                
+                // Limpar mensagens existentes
+                chatbotMessages.innerHTML = '';
+                
+                // Enviar mensagem inicial do bot para agendamento
+                const initialMessage = document.createElement('div');
+                initialMessage.className = 'message bot-message';
+                initialMessage.innerHTML = 'Olá! Vamos agendar seu serviço. Qual serviço você precisa?';
+                
+                const optionsDiv = document.createElement('div');
+                optionsDiv.className = 'option-buttons';
+                optionsDiv.innerHTML = `
+                    <button class="option-btn" data-option="sofa">Limpeza de sofá</button>
+                    <button class="option-btn" data-option="cadeiras">Higienização de cadeiras</button>
+                    <button class="option-btn" data-option="colchao">Limpeza de colchão</button>
+                    <button class="option-btn" data-option="outro">Outro serviço</button>
+                `;
+                initialMessage.appendChild(optionsDiv);
+                chatbotMessages.appendChild(initialMessage);
+                
+                // Rolar para o final
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                chatStep = 1;
+            });
+            
+            // Enviar mensagem
+            function sendUserMessage(message) {
+                if (message.trim() === '') return;
+                
+                const messageElement = document.createElement('div');
+                messageElement.className = 'message user-message';
+                messageElement.textContent = message;
+                chatbotMessages.appendChild(messageElement);
+                
+                userInput.value = '';
+                
+                // Rolar para o final
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                
+                // Processar resposta do bot
+                setTimeout(() => {
+                    processBotResponse(message);
+                }, 500);
+            }
+            
+            sendMessage.addEventListener('click', () => {
+                sendUserMessage(userInput.value);
+            });
+            
+            userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendUserMessage(userInput.value);
+                }
+            });
+            
+            // Botões de opção
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('option-btn')) {
+                    const option = e.target.getAttribute('data-option');
+                    sendUserMessage(e.target.textContent);
+                }
+            });
+            
+            // Verificar disponibilidade de data
+            function isDateAvailable(dateString) {
+                const dateObj = new Date(dateString);
+                const formattedDate = dateObj.toISOString().split('T')[0];
+                return !unavailableDates.includes(formattedDate);
+            }
+            
+            // Gerar mini calendário
+            function generateMiniCalendar() {
+                const today = new Date();
+                const year = today.getFullYear();
+                const month = today.getMonth();
+                
+                const firstDay = new Date(year, month, 1);
+                const lastDay = new Date(year, month + 1, 0);
+                
+                const daysInMonth = lastDay.getDate();
+                const startDay = firstDay.getDay();
+                
+                const calendarContainer = document.createElement('div');
+                calendarContainer.className = 'calendar-container';
+                
+                const calendarHeader = document.createElement('div');
+                calendarHeader.className = 'calendar-header';
+                calendarHeader.innerHTML = `
+                    <h4>${today.toLocaleString('default', { month: 'long' })} ${year}</h4>
+                `;
+                
+                const calendarGrid = document.createElement('div');
+                calendarGrid.className = 'calendar-grid';
+                
+                // Dias da semana
+                const weekdays = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+                weekdays.forEach(day => {
+                    const dayElement = document.createElement('div');
+                    dayElement.textContent = day;
+                    dayElement.style.fontWeight = 'bold';
+                    calendarGrid.appendChild(dayElement);
+                });
+                
+                // Dias vazios no início
+                for (let i = 0; i < startDay; i++) {
+                    const emptyDay = document.createElement('div');
+                    emptyDay.className = 'calendar-day';
+                    calendarGrid.appendChild(emptyDay);
+                }
+                
+                // Dias do mês
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                    const isAvailable = isDateAvailable(dateStr);
+                    
+                    const dayElement = document.createElement('div');
+                    dayElement.className = `calendar-day ${isAvailable ? 'available' : 'unavailable'}`;
+                    dayElement.textContent = day;
+                    
+                    if (isAvailable) {
+                        dayElement.addEventListener('click', () => {
+                            // Remover seleção anterior
+                            document.querySelectorAll('.calendar-day.selected').forEach(el => {
+                                el.classList.remove('selected');
+                            });
+                            
+                            // Selecionar este dia
+                            dayElement.classList.add('selected');
+                            
+                            // Definir a data selecionada
+                            appointmentData.date = dateStr;
+                            
+                            // Continuar o fluxo
+                            setTimeout(() => {
+                                sendUserMessage(dateStr);
+                            }, 300);
+                        });
+                    }
+                    
+                    calendarGrid.appendChild(dayElement);
+                }
+                
+                calendarContainer.appendChild(calendarHeader);
+                calendarContainer.appendChild(calendarGrid);
+                
+                return calendarContainer;
+            }
+            
+            // Formatar data para Google Agenda
+            function formatDateForGoogle(date) {
+                return date.toISOString().replace(/-|:|\.\d+/g, '');
+            }
+            
+            // Processar resposta do bot
+            function processBotResponse(userMessage) {
+                let botMessage = '';
+                let options = [];
+                let calendar = false;
+                
+                if (chatStep === 0) {
+                    if (userMessage.includes('agendar') || userMessage === 'Agendar visita') {
+                        botMessage = 'Ótimo! Vamos agendar sua visita. Qual serviço você precisa?';
+                        options = [
+                            {text: 'Limpeza de sofá', value: 'sofa'},
+                            {text: 'Higienização de cadeiras', value: 'cadeiras'},
+                            {text: 'Limpeza de colchão', value: 'colchao'},
+                            {text: 'Outro serviço', value: 'outro'}
+                        ];
+                        chatStep = 1;
+                    } else if (userMessage.includes('orçamento') || userMessage === 'Solicitar orçamento') {
+                        botMessage = 'Claro! Para gerar um orçamento preciso de algumas informações. Qual serviço você deseja?';
+                        options = [
+                            {text: 'Limpeza de sofá', value: 'sofa'},
+                            {text: 'Higienização de cadeiras', value: 'cadeiras'},
+                            {text: 'Limpeza de colchão', value: 'colchao'},
+                            {text: 'Outro serviço', value: 'outro'}
+                        ];
+                        appointmentData.service = 'Orçamento';
+                        chatStep = 5;
+                    } else {
+                        botMessage = 'Como posso ajudar você?';
+                        options = [
+                            {text: 'Agendar visita', value: 'agendar'},
+                            {text: 'Solicitar orçamento', value: 'orcamento'},
+                            {text: 'Tirar dúvidas', value: 'duvidas'}
+                        ];
+                    }
+                } 
+                
+                // Fluxo de agendamento
+                else if (chatStep === 1) {
+                    appointmentData.service = userMessage;
+                    botMessage = `Serviço selecionado: ${userMessage}. Por favor, selecione uma data disponível:`;
+                    calendar = true;
+                    chatStep = 2;
+                } 
+                else if (chatStep === 2) {
+                    if (appointmentData.date) {
+                        botMessage = `Data ${appointmentData.date} selecionada. Qual horário você prefere?`;
+                        options = [
+                            {text: 'Manhã (8h-12h)', value: 'manha'},
+                            {text: 'Tarde (13h-18h)', value: 'tarde'}
+                        ];
+                        chatStep = 3;
+                    } else {
+                        botMessage = 'Por favor, selecione uma data disponível no calendário acima.';
+                        calendar = true;
+                    }
+                } 
+                else if (chatStep === 3) {
+                    appointmentData.time = userMessage;
+                    botMessage = `Horário: ${userMessage}. Qual seu nome completo?`;
+                    chatStep = 4;
+                } 
+                else if (chatStep === 4) {
+                    appointmentData.name = userMessage;
+                    botMessage = `Prazer, ${userMessage}! Qual seu telefone para contato?`;
+                    chatStep = 5;
+                } 
+                else if (chatStep === 5) {
+                    appointmentData.phone = userMessage;
+                    botMessage = `Telefone: ${userMessage}. Por último, qual seu endereço?`;
+                    chatStep = 6;
+                } 
+                else if (chatStep === 6) {
+                    appointmentData.address = userMessage;
+                    
+                    // Montar resumo
+                    const summary = `
+                        <b>Resumo do agendamento:</b><br>
+                        Serviço: ${appointmentData.service}<br>
+                        Data: ${appointmentData.date}<br>
+                        Horário: ${appointmentData.time}<br>
+                        Nome: ${appointmentData.name}<br>
+                        Telefone: ${appointmentData.phone}<br>
+                        Endereço: ${appointmentData.address}
+                    `;
+                    
+                    botMessage = `${summary}<br><br>Tudo correto?`;
+                    options = [
+                        {text: 'Sim, confirmar', value: 'confirmar'},
+                        {text: 'Não, corrigir', value: 'corrigir'}
+                    ];
+                    chatStep = 7;
+                } 
+                else if (chatStep === 7) {
+                    if (userMessage.includes('Sim') || userMessage.includes('confirmar')) {
+                        // Gerar link para Google Agenda
+                        const startDate = new Date(appointmentData.date);
+                        startDate.setHours(10, 0, 0);
+                        const endDate = new Date(startDate);
+                        endDate.setHours(11, 0, 0);
+                        
+                        const googleCalendarLink = `https://calendar.google.com/calendar/u/0/r/eventedit?text=Visita+Sofá+Max&dates=${formatDateForGoogle(startDate)}/${formatDateForGoogle(endDate)}&details=${encodeURIComponent(appointmentData.service)}&location=${encodeURIComponent(appointmentData.address)}`;
+                        
+                        botMessage = `🎉 Agendamento confirmado!<br><br>Aqui está seu link para adicionar ao Google Agenda:<br><br><a href="${googleCalendarLink}" target="_blank" style="color: #D87D4A; font-weight: bold;">Adicionar ao Google Agenda</a><br><br>Obrigado por escolher a Sofá Max!`;
+                        
+                        // Enviar mensagem para WhatsApp
+                        const whatsappText = `Novo agendamento Sofá Max:\n\nServiço: ${appointmentData.service}\nData: ${appointmentData.date}\nHorário: ${appointmentData.time}\nCliente: ${appointmentData.name}\nTelefone: ${appointmentData.phone}\nEndereço: ${appointmentData.address}`;
+                        const whatsappLink = `https://wa.me/5581983930781?text=${encodeURIComponent(whatsappText)}`;
+                        
+                        setTimeout(() => {
+                            window.open(whatsappLink, '_blank');
+                        }, 2000);
+                        
+                        // Resetar dados
+                        appointmentData = {
+                            service: '',
+                            date: '',
+                            time: '',
+                            name: '',
+                            phone: '',
+                            address: ''
+                        };
+                        chatStep = 0;
+                    } else {
+                        botMessage = 'O que você gostaria de corrigir?';
+                        options = [
+                            {text: 'Serviço', value: 'servico'},
+                            {text: 'Data', value: 'data'},
+                            {text: 'Horário', value: 'horario'},
+                            {text: 'Nome', value: 'nome'},
+                            {text: 'Telefone', value: 'telefone'},
+                            {text: 'Endereço', value: 'endereco'}
+                        ];
+                        chatStep = 8;
+                    }
+                } 
+                else if (chatStep === 8) {
+                    if (userMessage.includes('Serviço')) {
+                        botMessage = 'Qual serviço você precisa?';
+                        chatStep = 1;
+                    } else if (userMessage.includes('Data')) {
+                        botMessage = 'Por favor, selecione uma nova data disponível:';
+                        calendar = true;
+                        chatStep = 2;
+                    } else if (userMessage.includes('Horário')) {
+                        botMessage = 'Qual horário você prefere?';
+                        options = [
+                            {text: 'Manhã (8h-12h)', value: 'manha'},
+                            {text: 'Tarde (13h-18h)', value: 'tarde'}
+                        ];
+                        chatStep = 3;
+                    } else if (userMessage.includes('Nome')) {
+                        botMessage = 'Qual seu nome completo?';
+                        chatStep = 4;
+                    } else if (userMessage.includes('Telefone')) {
+                        botMessage = 'Qual seu telefone para contato?';
+                        chatStep = 5;
+                    } else if (userMessage.includes('Endereço')) {
+                        botMessage = 'Qual seu endereço?';
+                        chatStep = 6;
+                    }
+                }
+                
+                // Se não houver mensagem definida, responder padrão
+                if (!botMessage) {
+                    botMessage = 'Desculpe, não entendi. Como posso ajudar?';
+                    options = [
+                        {text: 'Agendar visita', value: 'agendar'},
+                        {text: 'Solicitar orçamento', value: 'orcamento'},
+                        {text: 'Tirar dúvidas', value: 'duvidas'}
+                    ];
+                    chatStep = 0;
+                }
+                
+                // Exibir mensagem do bot
+                const messageElement = document.createElement('div');
+                messageElement.className = 'message bot-message';
+                messageElement.innerHTML = botMessage;
+                
+                // Adicionar calendário se necessário
+                if (calendar) {
+                    messageElement.appendChild(generateMiniCalendar());
+                }
+                
+                // Adicionar botões de opção se houver
+                if (options.length > 0) {
+                    const optionButtons = document.createElement('div');
+                    optionButtons.className = 'option-buttons';
+                    
+                    options.forEach(option => {
+                        const button = document.createElement('button');
+                        button.className = 'option-btn';
+                        button.setAttribute('data-option', option.value);
+                        button.textContent = option.text;
+                        optionButtons.appendChild(button);
+                    });
+                    
+                    messageElement.appendChild(optionButtons);
+                }
+                
+                chatbotMessages.appendChild(messageElement);
+                
+                // Rolar para o final
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+            
+            // Atualizar ano no footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Animação de scroll suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
